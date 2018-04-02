@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//file.40017.cn">
+    <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>svg TEST</title>
+    <style>
+        .box1{display:none;}
+.svgBox1{background-color:#f3f3f3;}
+.svgBox1 line {
+	fill: #000;
+	stroke: #000;
+	stroke-width: 1px;
+  }
+  .arrow-line {
+	stroke-dasharray: 60;
+	stroke-dashoffset: 60;
+	transition: stroke-dashoffset ease-in .5s .2s;
+  }
+  .arrow-head {
+	stroke-dasharray: 9;
+	stroke-dashoffset: -9;
+	transition: stroke-dashoffset ease-in .2s;
+  }
+  .svgBox1:hover line {
+	stroke-dashoffset: 0;
+  }
+  .svgBox1:hover .arrow-line {
+	transition: stroke-dashoffset ease-in .5s;
+  }
+  .svgBox1:hover .arrow-head {
+	transition: stroke-dashoffset ease-in .2s .5s;
+  }
+  .svgBox1{
+	stroke-dasharray: 9;
+	stroke-dashoffset: -9;
+	transition: stroke-dashoffset ease-in .8s;
+	}
+	
+	.box2{height:350px;}
+	.svgBox2{
+		display: block;
+		position: absolute;
+	}
+	.orBall{
+		width: 10px;
+		height: 10px;
+		background-color: orange;
+		border-radius: 50%;
+		offset-path: path('M10 315 L 110 215 A 30 50 0 0 0 162.55 162.45 L 172.55 152.45 A 30 50 -45 0 1 215.1 109.9 L 315 10');
+		offset-distance: 0%;
+		animation: red-ball 4s linear alternate infinite;
+	}
+
+	
+	.box3{display:none;}
+
+	.box4 svg {
+		width: 300px;
+		display: block;
+		position: absolute;
+	}
+	
+	.ball {
+		width: 10px;
+		height: 10px;
+		background-color: red;
+		border-radius: 50%;
+		offset-path: path('M10 80 Q 77.5 10, 145 80 T 280 80');
+		offset-distance: 0%;
+		animation: red-ball 2s linear alternate infinite;
+	}
+	
+	@keyframes red-ball {
+		from {
+			offset-distance: 0%;
+		}
+		to {
+			offset-distance: 100%;
+		}
+	}
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <svg class="svgBox1" width="360" height="52" viewBox="0 0 89.4 12.4">
+            <line class="arrow-line" x1="0" y1="6.2" x2="59.6" y2="6.2"></line>
+            <line class="arrow-head" x1="54.7" y1="0.7" x2="60.5" y2="6.5"></line>
+            <line class="arrow-head" x1="54.7" y1="11.7" x2="60.5" y2="5.8"></line>
+        </svg>
+    </div>
+
+    <div class="box2">
+        <svg class="svgBox2" width="320px" height="320px" viewBox="0 0 320 320">
+            <path class="path1" d="M10 315
+                     L 110 215
+                     A 30 50 0 0 0 162.55 162.45
+                     L 172.55 152.45
+                     A 30 50 -45 0 1 215.1 109.9
+                     L 315 10" stroke="black" fill="transparent" stroke-width="1" fill-opacity="0.5"/>
+          </svg>
+
+          <div class="orBall"></div>
+    </div>
+
+    <div class="box3">
+        <svg width="357px" height="552px" viewBox="0 0 357 552" > 
+            <polyline id="Path" stroke="#979797" fill="none" stroke-width="3" points="2.12890625 2.1640625 265.90625 139.902344 323.003906 37.9804688"></polyline> 
+            <polygon id="Path" fill="none" stroke="#BD10E0" stroke-width="3" points="2.12890625 412.164062 265.90625 549.902344 323.003906 447.980469 250.5625 487.46875"></polygon> 
+            <path fill="none" d="M2.12890625,324.164062 C246.200156,411.01209 334.125937,456.924851 265.90625,461.902344 C198.734375,466.803385 217.766927,432.829427 323.003906,359.980469" id="Path" stroke="#50E3C2" stroke-width="3"></path> 
+            <path fill="none" d="M2.12890625,232.164062 C75.0507812,323.229167 162.976562,369.141927 265.90625,369.902344 C360.395833,338.97526 379.428385,305.001302 323.003906,267.980469" id="Path" stroke="#417505" stroke-width="3"></path> 
+            <path fill="none" d="M2.12890625,142.164062 C106.782552,268.945312 193.595052,309.457031 262.566406,263.699219 C331.53776,217.941406 351.683594,189.36849 323.003906,177.980469" id="Path" stroke="#BD10E0" stroke-width="3"></path> 
+            <path fill="none" d="M2.12890625,82.1640625 L240.945204,206.868276 C254.848001,214.127988 272.003365,209.018721 279.66886,195.335469 L323.003906,117.980469" id="Path" stroke="#D31E1E" stroke-width="3"></path> 
+        </svg>
+    </div>
+
+    <div class="box4">
+        <svg width="300px" height="175px" version="1.1">
+            <path fill="transparent" stroke="#888888" stroke-width="1" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="path"></path>
+        </svg>
+            
+        <div class="ball"></div>
+    </div>
+
+    <script type="text/javascript" src="//file.40017.cn/huochepiao/cube/js/common/zepto.min.js"></script>
+</body>
+
+</html>
